@@ -1,0 +1,16 @@
+# https://docs.docker.com/compose/compose-file/
+version: '3'
+services:
+  mysql-tutorial:
+    image: mariadb
+    container_name: mysql-tutorial
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: tutorial
+      MYSQL_USER: tutorial
+      MYSQL_PASSWORD: tutorial
+    volumes:
+    - ./data:/var/lib/mysql
+    ports:
+    - "3306:3306"
