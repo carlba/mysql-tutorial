@@ -34,6 +34,19 @@ USE hello_world_db
 SELECT database();
 ```
 
+### Disable Strict Mode
+This amongst other things truncates data that are two long for a VARCHAR field with a warning 
+instead of giving an error. It requires the user to login again.
+
+```sql
+SET @@global.sql_mode=''
+``` 
+
+enable it again, like so;
+```sql
+SET @@sql_mode='STRICT_TRANS_TABLES';
+``` 
+
 ## Tables
 A database is a a collection of tables this is true for relational databases. 
 
