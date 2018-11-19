@@ -66,3 +66,8 @@ SHOW COLUMNS FROM cats;
 DROP TABLE cats;
 ```
 
+### Inserting Data into Table
+```sql
+INSERT INTO cats(name, age)
+VALUES('Blue', 1);
+```
