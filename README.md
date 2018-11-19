@@ -71,3 +71,18 @@ DROP TABLE cats;
 INSERT INTO cats(name, age)
 VALUES('Blue', 1);
 ```
+
+and verify it, like so:
+
+```sql
+SELECT * from cats;
+```
+
+### Bulk Insertion
+https://www.udemy.com/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert/learn/v4/t/lecture/7019440?start=0
+```sql
+INSERT INTO cats(name, age)
+VALUES ('Peanut', 2),
+       ('Butter', 4),
+       ('Jelly', 7);
+```
