@@ -108,3 +108,27 @@ SHOW WARNINGS;
 ```
 
 Examples of warnings are inserting strings that are above the maximum limit for a VARCHAR
+
+### NULL and NOT NULL
+https://www.udemy.com/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert/learn/v4/t/lecture/7019712?start=0
+
+If not specified otherwise a column in a table is allays nullable meaning that the column value
+doesn't have to be specified on insertion. To override this behaviour add NOT NULL to the column
+declaration in the `CREATE TABLE` statement.
+
+```sql
+CREATE TABLE cats 
+( 
+    name VARCHAR(50) NOT NULL, 
+    age INT NOT NULL 
+);
+```
+
+This will result in a warning about the column not having a default value and MySQL will actually
+pick one anyway. The default for an INT is 0.
+
+
+
+
+
+
