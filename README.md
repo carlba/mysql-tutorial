@@ -59,7 +59,7 @@ VARCHAR(<maximum characters>)
 ```sql
 CREATE TABLE cats 
 ( 
-    name VARCHAR(100), 
+    name VARCHAR(50), 
     age INT 
 );
 ```
@@ -99,3 +99,12 @@ VALUES ('Peanut', 2),
        ('Butter', 4),
        ('Jelly', 7);
 ```
+
+### Warnings
+If a warning is shown when a command is executed you can show it, like so:
+
+```sql
+SHOW WARNINGS;
+```
+
+Examples of warnings are inserting strings that are above the maximum limit for a VARCHAR
