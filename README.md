@@ -127,8 +127,33 @@ CREATE TABLE cats
 This will result in a warning about the column not having a default value and MySQL will actually
 pick one anyway. The default for an INT is 0.
 
+### Settings Default Values
+https://www.udemy.com/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert/learn/v4/t/lecture/7019744?start=0
 
+```sql
+CREATE TABLE cats3( name VARCHAR(100) DEFAULT 'unnamed', age INT DEFAULT 99);
+INSERT INTO cats3(age) VALUES(13);
+```
 
+This results in a table like:
 
+```
++---------+-----+
+| name    | age |
++---------+-----+
+| unnamed |  13 |
++---------+-----+
+```
 
+You still might want to specify `NOT NULL` to prevent the operator to explicitly provide a `NULL`
+value for a column, like so:
 
+```sql
+CREATE TABLE cats4( name VARCHAR(100) NOT NULL DEFAULT 'unnamed', age INT NOT NULL DEFAULT 99);
+INSERT INTO cats4(age) VALUES(13);
+```
+
+Leading to this:
+```
+ERROR: 1048 (23000): Column 'age' cannot be null
+```
