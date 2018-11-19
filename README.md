@@ -157,3 +157,60 @@ Leading to this:
 ```
 ERROR: 1048 (23000): Column 'age' cannot be null
 ```
+
+### A Primer in Primary keys
+https://www.udemy.com/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert/learn/v4/t/lecture/7019750?start=0
+A unique identifier for a row and thereby a unique entity of a collection.
+
+```sql
+CREATE TABLE unique_cats( 
+  cat_id INT NOT NULL, 
+  name VARCHAR(100), 
+  age INT, 
+  PRIMARY KEY (cat_id)
+);
+```
+
+Results in this:
+```
++--------+--------------+------+-----+---------+-------+
+| Field  | Type         | Null | Key | Default | Extra |
++--------+--------------+------+-----+---------+-------+
+| cat_id | int(11)      | NO   | PRI | NULL    |       |
+| name   | varchar(100) | YES  |     | NULL    |       |
+| age    | int(11)      | YES  |     | NULL    |       |
++--------+--------------+------+-----+---------+-------+
+```
+
+A Primary Key must be Unique so the this will lead to an error:
+
+```sql
+INSERT INTO unique_cats(cat_id, name, age) VALUES(1, 'Fred', 23);
+INSERT INTO unique_cats(cat_id, name, age) VALUES(1, 'James', 3);
+```
+```
+ERROR: 1062 (23000): Duplicate entry '1' for key 'PRIMARY'
+```
+It is common to use the username as the Primary Key
+
+
+It is redundant to have to specify the id of the row manually for each insertion. The 
+`AUTO_INCREMENT` column property solves this, like so:
+
+```sql
+CREATE TABLE unique_cats2( 
+  cat_id INT NOT NULL AUTO_INCREMENT, 
+  name VARCHAR(100), 
+  age INT, 
+  PRIMARY KEY (cat_id)
+);
+```
+
+It is now possible to insert multiple entities, like so:
+```sql
+INSERT INTO unique_cats2 (name, age) VALUES('Skippy', 4) ;
+INSERT INTO unique_cats2 (name, age) VALUES('Jiff', 3) ;
+INSERT INTO unique_cats2 (name, age) VALUES('Jiff', 3) ;
+```
+
+And each of the inserts will be treated as a separate entity.
