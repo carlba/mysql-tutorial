@@ -3,6 +3,10 @@ https://www.udemy.com/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert
 
 ## Installation
 
+```bash
+docker-compose up -d
+```
+
 ## Databases
 
 ### Listing, Creating and Updating Databases
