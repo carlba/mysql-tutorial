@@ -446,3 +446,80 @@ Results in:
 | Consider the Lobster - David - Foster Wallace                          |
 +------------------------------------------------------------------------+
 ```
+## SUBSTRING
+* [The Ultimate MySQL bootcamp - Introducing SUBSTRING](https://www.udemy.com/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert/learn/v4/t/lecture/7019798?start=0)
+* [MySQL Reference Manual - SUBSTRING](https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_substring)
+
+```sql
+SELECT SUBSTRING('Hello World', 1, 4);
+```
+
+Results in:
+```
++-------------------------------+
+| SUBSTRING('Hello World', 1, 4) |
++-------------------------------+
+| Hell                          |
++-------------------------------+
+```
+
+
+Get position 7 to end of string
+```sql
+SELECT SUBSTRING('Hello World', 7);
+```
+
+Results in:
+```
++-----------------------------+
+| SUBSTRING('Hello World', 7) |
++-----------------------------+
+| World                       |
++-----------------------------+
+```
+
+Get five characters starting from end of string
+
+```sql
+SELECT SUBSTRING('Hello World', -5);
+```
+
+Select the first ten characters of the title of each book in table `books` with column name 
+'Short Title'
+
+```sql
+SELECT SUBSTRING(title, 1,10) as 'Short Title' from books;
+```
+
+To add an extra '...' at the end of the 'Short Title' the `SUBSTRING` command can be used in
+conjunction with `CONCAT`, like so:
+
+```sql
+SELECT CONCAT(SUBSTRING(title, 1,10), '...') as 'Short Title' from books;
+```
+
+Results in:
+```
++---------------+
+| Short Title   |
++---------------+
+| The Namesa... |
+| Norse Myth... |
+| American G... |
+| Interprete... |
+| A Hologram... |
+| The Circle... |
+| The Amazin... |
+| Just Kids...  |
+| A Heartbre... |
+| Coraline...   |
+| What We Ta... |
+| Where I'm ... |
+| White Nois... |
+| Cannery Ro... |
+| Oblivion: ... |
+| Consider t... |
++---------------+
+```
+
+Looks nice doesn't it 
