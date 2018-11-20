@@ -379,3 +379,70 @@ https://www.udemy.com/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert
    ```
    \source ./books/book-data.sql
    ```
+
+## Strings Functions
+[MySQL Reference Manual - String Functions](https://dev.mysql.com/doc/refman/en/string-functions.html)
+
+
+## CONCAT
+[MySQL Reference Manual - CONCAT](https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_concat)
+Combine data for cleaner output
+
+https://www.udemy.com/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert/learn/v4/t/lecture/7019796?start=0
+
+### Combine author first name and last name into one column called `Name`
+```sql
+SELECT CONCAT(author_fname,' ', author_lname) as 'Name' from books;
+```
+Results in:
+```
++----------------------+
+| Name                 |
++----------------------+
+| Jhumpa Lahiri        |
+| Neil Gaiman          |
+| Neil Gaiman          |
+| Jhumpa Lahiri        |
+| Dave Eggers          |
+| Dave Eggers          |
+| Michael Chabon       |
+| Patti Smith          |
+| Dave Eggers          |
+| Neil Gaiman          |
+| Raymond Carver       |
+| Raymond Carver       |
+| Don DeLillo          |
+| John Steinbeck       |
+| David Foster Wallace |
+| David Foster Wallace |
++----------------------+
+```
+
+### Joining column with separator
+```sql
+SELECT CONCAT_WS(' - ', title, author_fname, author_lname) FROM books;
+```
+
+Results in:
+```
++------------------------------------------------------------------------+
+| CONCAT_WS(' - ', title, author_fname, author_lname)                    |
++------------------------------------------------------------------------+
+| The Namesake - Jhumpa - Lahiri                                         |
+| Norse Mythology - Neil - Gaiman                                        |
+| American Gods - Neil - Gaiman                                          |
+| Interpreter of Maladies - Jhumpa - Lahiri                              |
+| A Hologram for the King: A Novel - Dave - Eggers                       |
+| The Circle - Dave - Eggers                                             |
+| The Amazing Adventures of Kavalier & Clay - Michael - Chabon           |
+| Just Kids - Patti - Smith                                              |
+| A Heartbreaking Work of Staggering Genius - Dave - Eggers              |
+| Coraline - Neil - Gaiman                                               |
+| What We Talk About When We Talk About Love: Stories - Raymond - Carver |
+| Where I'm Calling From: Selected Stories - Raymond - Carver            |
+| White Noise - Don - DeLillo                                            |
+| Cannery Row - John - Steinbeck                                         |
+| Oblivion: Stories - David - Foster Wallace                             |
+| Consider the Lobster - David - Foster Wallace                          |
++------------------------------------------------------------------------+
+```
