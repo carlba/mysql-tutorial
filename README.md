@@ -361,3 +361,21 @@ https://www.udemy.com/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert
    ```
    \source ./cats.sql
    ```
+
+## Insert Book Sample data
+
+https://www.udemy.com/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert/learn/v4/t/lecture/7019788?start=0
+
+1. Start the CLI by
+   ```bash
+   mysqlsh --sql -P3306 -h127.0.0.1 -uroot -ppassword
+   ```
+2. Create book_shop database
+   ```sql
+   CREATE DATABASE book_shop;
+   USE book_shop;
+   ```
+2. Source the file within the CLI, like so:
+   ```
+   \source ./books/book-data.sql
+   ```
