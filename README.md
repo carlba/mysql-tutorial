@@ -538,3 +538,20 @@ Nest multiple string functions
 ```sql
 SELECT SUBSTRING(REPLACE(title, 'e', '3'), 1, 20) as 'Weird String' from books;
 ```
+
+## REVERSE
+* [The Ultimate MySQL bootcamp - Introducing REVERSE](https://www.udemy.com/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert/learn/v4/t/lecture/7019802?start=0)
+* [MySQL Reference Manual - REVERSE](https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_reverse)
+
+```sql
+SELECT REVERSE('Hello World');
+```
+
+Results in:
+```
++------------------------+
+| REVERSE('Hello World') |
++------------------------+
+| dlroW olleH            |
++------------------------+
+```
