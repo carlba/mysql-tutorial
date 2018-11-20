@@ -555,3 +555,28 @@ Results in:
 | dlroW olleH            |
 +------------------------+
 ```
+
+## CHAR_LENGTH
+* [The Ultimate MySQL bootcamp - Introducing CHAR_LENGTH](https://www.udemy.com/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert/learn/v4/t/lecture/7019804?start=0)
+* [MySQL Reference Manual - CHAR_LENGTH](https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_char-length)
+
+```sql
+SELECT CHAR_LENGTH('Hello World');
+```
+
+Results in:
+```
++----------------------------+
+| CHAR_LENGTH('Hello World') |
++----------------------------+
+|                         11 |
++----------------------------+
+```
+
+Show a human readable string like 'Eggers is 6 characters long' for each author in table `books`
+
+```sql
+SELECT CONCAT(author_lname, ' is ', CHAR_LENGTH(author_lname), ' characters long.') FROM books;
+```
+
+
