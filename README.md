@@ -579,4 +579,15 @@ Show a human readable string like 'Eggers is 6 characters long' for each author 
 SELECT CONCAT(author_lname, ' is ', CHAR_LENGTH(author_lname), ' characters long.') FROM books;
 ```
 
+## UPPER AND LOWER
 
+* [MySQL Reference Manual - Upper](https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_upper)
+* [MySQL Reference Manual - Lower](https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_lower)
+
+```sql
+SELECT UPPER('Hello World');
+```
+
+```sql
+SELECT LOWER('Hello World');
+```
