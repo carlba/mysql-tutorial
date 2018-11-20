@@ -384,13 +384,13 @@ https://www.udemy.com/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert
 [MySQL Reference Manual - String Functions](https://dev.mysql.com/doc/refman/en/string-functions.html)
 
 
-## CONCAT
+### CONCAT
 [MySQL Reference Manual - CONCAT](https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_concat)
 Combine data for cleaner output
 
 https://www.udemy.com/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert/learn/v4/t/lecture/7019796?start=0
 
-### Combine author first name and last name into one column called `Name`
+#### Combine author first name and last name into one column called `Name`
 ```sql
 SELECT CONCAT(author_fname,' ', author_lname) as 'Name' from books;
 ```
@@ -463,7 +463,6 @@ Results in:
 +-------------------------------+
 ```
 
-
 Get position 7 to end of string
 ```sql
 SELECT SUBSTRING('Hello World', 7);
@@ -524,7 +523,7 @@ Results in:
 
 Looks nice doesn't it 
 
-## REPLACE
+### REPLACE
 * [The Ultimate MySQL bootcamp - Introducing REPLACE](https://www.udemy.com/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert/learn/v4/t/lecture/7019800?start=0)
 * [MySQL Reference Manual - REPLACE](https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_replace)
 
@@ -539,7 +538,7 @@ Nest multiple string functions
 SELECT SUBSTRING(REPLACE(title, 'e', '3'), 1, 20) as 'Weird String' from books;
 ```
 
-## REVERSE
+### REVERSE
 * [The Ultimate MySQL bootcamp - Introducing REVERSE](https://www.udemy.com/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert/learn/v4/t/lecture/7019802?start=0)
 * [MySQL Reference Manual - REVERSE](https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_reverse)
 
@@ -556,7 +555,7 @@ Results in:
 +------------------------+
 ```
 
-## CHAR_LENGTH
+### CHAR_LENGTH
 * [The Ultimate MySQL bootcamp - Introducing CHAR_LENGTH](https://www.udemy.com/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert/learn/v4/t/lecture/7019804?start=0)
 * [MySQL Reference Manual - CHAR_LENGTH](https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_char-length)
 
@@ -579,7 +578,7 @@ Show a human readable string like 'Eggers is 6 characters long' for each author 
 SELECT CONCAT(author_lname, ' is ', CHAR_LENGTH(author_lname), ' characters long.') FROM books;
 ```
 
-## UPPER AND LOWER
+### UPPER AND LOWER
 
 * [MySQL Reference Manual - Upper](https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_upper)
 * [MySQL Reference Manual - Lower](https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_lower)
@@ -591,3 +590,5 @@ SELECT UPPER('Hello World');
 ```sql
 SELECT LOWER('Hello World');
 ```
+
+
