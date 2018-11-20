@@ -336,4 +336,18 @@ UPDATE cats SET age=12 WHERE breed='Maine Coon';
 SELECT * FROM cats WHERE breed='Maine Coon';
 ```
 
+## CRU(D) Delete
+https://www.udemy.com/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert/learn/v4/t/lecture/7019774?start=0
+```sql
+-- Delete all cats named 'Egg' from the table `cats`
+DELETE FROM cats WHERE name='Egg';
+-- Delete all cats from the table `cats`
+DELETE FROM cats;
+```
+
+*Always do a `SELECT` statement to test the `DELETE` statement to make sure that
+the correct data was targeted*  
+
+
+ 
 
