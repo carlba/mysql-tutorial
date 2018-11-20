@@ -349,5 +349,15 @@ DELETE FROM cats;
 the correct data was targeted*  
 
 
- 
+## Running SQL Files
 
+https://www.udemy.com/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert/learn/v4/t/lecture/7019786?start=0
+
+1. Start the CLI by
+   ```bash
+   mysqlsh --sql -P3306 -h127.0.0.1 -uroot -ppassword
+   ```
+2. Source the file within the CLI, like so:
+   ```
+   \source ./cats.sql
+   ```
