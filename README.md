@@ -279,3 +279,10 @@ Will result in:
 ```
 
 `WHERE` statements matching strings are case insensitive by default.
+
+https://www.udemy.com/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert/learn/v4/t/lecture/7019764?start=0
+`WHERE` statements can match either user input or values of other columns, like so:
+```sql
+SELECT * FROM cats WHERE cat_id=age;
+```
+This will retrieve a list of all cats that has a `cat_id` that is equal to their `age`
