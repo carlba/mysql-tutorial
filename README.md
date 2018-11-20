@@ -523,3 +523,18 @@ Results in:
 ```
 
 Looks nice doesn't it 
+
+## REPLACE
+* [The Ultimate MySQL bootcamp - Introducing REPLACE](https://www.udemy.com/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert/learn/v4/t/lecture/7019800?start=0)
+* [MySQL Reference Manual - REPLACE](https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_replace)
+
+
+Replace all e's in all book titles with the number 3
+```sql
+SELECT REPLACE(title, 'e', '3') from books;
+```
+
+Nest multiple string functions
+```sql
+SELECT SUBSTRING(REPLACE(title, 'e', '3'), 1, 20) as 'Weird String' from books;
+```
