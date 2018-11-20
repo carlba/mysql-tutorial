@@ -603,5 +603,38 @@ INSERT INTO books (title, author_fname, author_lname, released_year, stock_quant
          ('Lincoln In The Bardo', 'George', 'Saunders', 2017, 1000, 367);
 ```
 
+## DISTINCT
+* [The Ultimate MySQL bootcamp - Using DISTINCT](https://www.udemy.com/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert/learn/v4/t/lecture/7019816?start=0)
 
+The `DISTINCT` keyword comes straight after `SELECT` and only retrieves the unique entries of values
+in a column. 
 
+Get distinct author last names
+
+```sql
+SELECT DISTINCT author_lname FROM books;
+```
+
+Results in:
+```
++----------------+
+| author_lname   |
++----------------+
+| Lahiri         |
+| Gaiman         |
+| Eggers         |
+| Chabon         |
+| Smith          |
+| Carver         |
+| DeLillo        |
+| Steinbeck      |
+| Foster Wallace |
+| Harris         |
+| Saunders       |
++----------------+
+```
+
+Get distinct pairs of author first and last names
+```sql
+SELECT DISTINCT author_fname, author_lname FROM books;
+```
