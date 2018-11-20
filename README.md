@@ -290,10 +290,23 @@ This will retrieve a list of all cats that has a `cat_id` that is equal to their
 
 ### Aliases
 https://www.udemy.com/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert/learn/v4/t/lecture/7019766?start=0
+
 It is possible to rename the output of some fields using an alias, like so:
 ```sql
 SELECT cat_id as id, name FROM cats;
 ```
 
+## CR(U)D Update
+https://www.udemy.com/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert/learn/v4/t/lecture/7019770?start=0
 
+
+How do we alter existing database
+
+Change all cats that are of `breed` 'Tabby' to `breed` 'Shorthair'
+```sql
+UPDATE cats SET breed='Shorthair' WHERE breed='Tabby';
+```
+
+*Always do a `SELECT` statement to test the `UPDATE` statement to make sure that
+the correct data was targeted*  
 
