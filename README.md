@@ -214,3 +214,50 @@ INSERT INTO unique_cats2 (name, age) VALUES('Jiff', 3) ;
 ```
 
 And each of the inserts will be treated as a separate entity.
+
+
+## CRUD
+
+### Sample data
+https://www.udemy.com/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert/learn/v4/t/lecture/7019756?start=0
+
+```sql
+-- Let's drop the existing cats table:
+DROP TABLE cats;
+-- Recreate a new cats table
+CREATE TABLE cats 
+  ( 
+     cat_id INT NOT NULL AUTO_INCREMENT, 
+     name   VARCHAR(100), 
+     breed  VARCHAR(100), 
+     age    INT, 
+     PRIMARY KEY (cat_id) 
+  ); 
+
+-- Show the created cats table
+DESCRIBE cats;
+
+-- Insert data
+INSERT INTO cats(name, breed, age) 
+VALUES ('Ringo', 'Tabby', 4),
+       ('Cindy', 'Maine Coon', 10),
+       ('Dumbledore', 'Maine Coon', 11),
+       ('Egg', 'Persian', 4),
+       ('Misty', 'Tabby', 13),
+       ('George Michael', 'Ragdoll', 9),
+       ('Jackson', 'Sphynx', 7);
+```
+
+## C(R)UD
+https://www.udemy.com/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert/learn/v4/t/lecture/7019758?start=0
+
+```sql
+SELECT * FROM cats;
+```
+The star means retrieve all columns from table cats.
+
+## Select specific column(s) from table
+
+```sql
+SELECT name, age FROM cats;
+```
