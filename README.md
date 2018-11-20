@@ -261,3 +261,21 @@ The star means retrieve all columns from table cats.
 ```sql
 SELECT name, age FROM cats;
 ```
+
+## Filter the results by value using `WHERE`
+https://www.udemy.com/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert/learn/v4/t/lecture/7019760?start=0
+```sql
+SELECT * FROM cats WHERE age=4;
+```
+
+Will result in: 
+```
++--------+-------+---------+-----+
+| cat_id | name  | breed   | age |
++--------+-------+---------+-----+
+|      1 | Ringo | Tabby   |   4 |
+|      4 | Egg   | Persian |   4 |
++--------+-------+---------+-----+
+```
+
+`WHERE` statements matching strings are case insensitive by default.
