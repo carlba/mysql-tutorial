@@ -7,7 +7,7 @@ CREATE TABLE shirts
     shirt_id INT NOT NULL AUTO_INCREMENT,
     article VARCHAR(200),
     color VARCHAR(50),
-    shirt_size VARCHAR(1),
+    shirt_size VARCHAR(2),
     last_worn int,
     PRIMARY KEY (shirt_id)
   );
