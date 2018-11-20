@@ -591,4 +591,17 @@ SELECT UPPER('Hello World');
 SELECT LOWER('Hello World');
 ```
 
+## Refining our Selections
+
+### More sample data into `books`
+* [The Ultimate MySQL bootcamp - Adding A Couple New Books](https://www.udemy.com/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert/learn/v4/t/lecture/7019814?start=0)
+
+```sql
+INSERT INTO books (title, author_fname, author_lname, released_year, stock_quantity, pages)
+  VALUES ('10% Happier', 'Dan', 'Harris', 2014, 29, 256),
+         ('fake_book', 'Freida', 'Harris', 2001, 287, 428),
+         ('Lincoln In The Bardo', 'George', 'Saunders', 2017, 1000, 367);
+```
+
+
 
