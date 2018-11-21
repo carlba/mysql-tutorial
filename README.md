@@ -651,3 +651,18 @@ SELECT DISTINCT author_fname, author_lname FROM books ORDER BY author_lname;
 
 * The default order is ASCENDING
 * The default order can be reversed by adding the keyword `DESC` after `ORDER BY`
+
+## LIMIT
+
+* [The Ultimate MySQL bootcamp - LIMIT](https://www.udemy.com/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert/learn/v4/t/lecture/7019820?start=0)
+
+
+Get all columns of the first record from the table `books`
+```sql
+SELECT * FROM books LIMIT 1;
+```
+
+Get all columns of the second to fifth record from the table `books`
+```sql
+SELECT * FROM books LIMIT 2,5;
+```
