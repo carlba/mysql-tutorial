@@ -835,5 +835,14 @@ be used to achieve the same thing, like so:
 SELECT title, pages FROM books ORDER BY pages LIMIT 1;
 ```
 
+## MIN and MAX in combination with GROUP BY
+* [The Ultimate MySQL bootcamp - MIN and MAX in combination with GROUP BY](https://www.udemy.com/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert/learn/v4/t/lecture/7019836?start=0)
+
+Get the first released book for all authors
+```sql
+SELECT author_fname, author_lname, MIN(released_year) 
+FROM books 
+GROUP BY author_lname, author_fname;
+```
 
 
