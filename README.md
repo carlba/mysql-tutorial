@@ -666,3 +666,27 @@ Get all columns of the second to fifth record from the table `books`
 ```sql
 SELECT * FROM books LIMIT 2,5;
 ```
+
+## LIKE
+* [The Ultimate MySQL bootcamp - LIKE](https://www.udemy.com/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert/learn/v4/t/lecture/7019822?start=0)
+
+
+Matches parts of column values
+
+* The % sign are wildcards and works like a asterisk
+* The patterns are case insensitive by default.
+
+Get `title` and `author_fname` column from table `books` where `author_fname` contains the string
+'da'.
+
+```sql
+SELECT title, author_fname from books WHERE author_fname LIKE '%da%';
+```
+
+Get `title` and `author_fname` column from table `books` where `author_fname` starts with the 
+string 'da'.
+
+```sql
+SELECT title, author_fname from books WHERE author_fname LIKE 'da%';
+```
+
