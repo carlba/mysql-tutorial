@@ -820,3 +820,20 @@ Get the latest released book from table `books`
 ```sql
 SELECT MAX(released_year) FROM books;
 ```
+
+* [The Ultimate MySQL bootcamp - A Problem with MIN and MAX](https://www.udemy.com/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert/learn/v4/t/lecture/7019834?start=0)
+Get the book with the least pages in the `books` table
+```sql
+SELECT * FROM books WHERE pages = (SELECT Min(pages) FROM books);
+```
+MySQL executes the subquery first and then uses the result as input for the outer query.
+
+This is not effective since two queries needs to be executed. As an alternative `ORDER BY` can
+be used to achieve the same thing, like so:
+
+```sql
+SELECT title, pages FROM books ORDER BY pages LIMIT 1;
+```
+
+
+
