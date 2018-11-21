@@ -668,25 +668,46 @@ SELECT * FROM books LIMIT 2,5;
 ```
 
 ## LIKE
+
 * [The Ultimate MySQL bootcamp - LIKE](https://www.udemy.com/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert/learn/v4/t/lecture/7019822?start=0)
+* [The Ultimate MySQL bootcamp - LIKE Part2](https://www.udemy.com/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert/learn/v4/t/lecture/7019824?start=0)
 
 
 Matches parts of column values
 
 * The % sign are wildcards and works like a asterisk
+* The _ sign are wildcards matches exactly one character
+* The `%` and `_` can be escaped by `\`
+
 * The patterns are case insensitive by default.
 
 Get `title` and `author_fname` column from table `books` where `author_fname` contains the string
 'da'.
-
 ```sql
 SELECT title, author_fname from books WHERE author_fname LIKE '%da%';
 ```
 
 Get `title` and `author_fname` column from table `books` where `author_fname` starts with the 
 string 'da'.
-
 ```sql
 SELECT title, author_fname from books WHERE author_fname LIKE 'da%';
 ```
 
+Get `title` and `stock_quantity` from table `books` where `stock_quantity` us exactly to 
+characters or numbers long.
+
+```sql
+SELECT title, stock_quantity FROM books WHERE stock_quantity LIKE '__';
+```
+
+## Selecting titles with `%` and `_` in them
+
+Get `title` from table books where `title` has a percentage sign in it.
+```sql
+SELECT title FROM books WHERE title LIKE '%\%%' ;
+```
+
+Get `title` from table books where `title` has a underscore sign in it.
+```sql
+SELECT title FROM books WHERE title LIKE '%\_%' ;
+```
