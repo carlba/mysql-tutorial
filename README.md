@@ -638,3 +638,16 @@ Get distinct pairs of author first and last names
 ```sql
 SELECT DISTINCT author_fname, author_lname FROM books;
 ```
+
+## ORDER BY
+
+* [The Ultimate MySQL bootcamp - ORDER BY](https://www.udemy.com/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert/learn/v4/t/lecture/7019818?start=0)
+
+Orders results by the values in a column.
+
+```sql
+SELECT DISTINCT author_fname, author_lname FROM books ORDER BY author_lname;
+```
+
+* The default order is ASCENDING
+* The default order can be reversed by adding the keyword `DESC` after `ORDER BY`
