@@ -714,7 +714,7 @@ SELECT title FROM books WHERE title LIKE '%\_%' ;
 
 ## Aggregate functions
 
-## COUNT
+### COUNT
 
 * [The Ultimate MySQL bootcamp - COUNT](https://www.udemy.com/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert/learn/v4/t/lecture/7019828?start=0)
 
@@ -762,7 +762,7 @@ How many titles contains the string 'the'
 SELECT COUNT(*) FROM books WHERE title LIKE '%the%';
 ```
 
-## GROUP BY
+### GROUP BY
 
 * [The Ultimate MySQL bootcamp - GROUP BY](https://www.udemy.com/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert/learn/v4/t/lecture/7019830?start=0)
 
@@ -806,7 +806,7 @@ SELECT author_fname, author_lname, COUNT(*) FROM books GROUP BY author_lname, au
 ```
 Which will avoid duplicated `author_lname`
 
-## MIN and MAX
+### MIN and MAX
 
 * [The Ultimate MySQL bootcamp - MIN and MAX](https://www.udemy.com/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert/learn/v4/t/lecture/7019832?start=0)
 
@@ -835,7 +835,7 @@ be used to achieve the same thing, like so:
 SELECT title, pages FROM books ORDER BY pages LIMIT 1;
 ```
 
-## MIN and MAX in combination with GROUP BY
+### MIN and MAX in combination with GROUP BY
 * [The Ultimate MySQL bootcamp - MIN and MAX in combination with GROUP BY](https://www.udemy.com/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert/learn/v4/t/lecture/7019836?start=0)
 
 Get the first released book for all authors
@@ -845,7 +845,7 @@ FROM books
 GROUP BY author_lname, author_fname;
 ```
 
-## SUM
+### SUM
 * [The Ultimate MySQL bootcamp - SUM](https://www.udemy.com/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert/learn/v4/t/lecture/7019838?start=0)
 
 Calculate the total amount of pages from all books in the `books` tables
@@ -858,7 +858,7 @@ Calculate the total amount an author has produced in total in the `books` tables
 SELECT author_fname, author_lname, SUM(pages) from books GROUP BY author_fname, author_lname;
 ```
 
-## AVG
+### AVG
 
 * [The Ultimate MySQL bootcamp - AVG](https://www.udemy.com/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert/learn/v4/t/lecture/7019840?start=0)
 
