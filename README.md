@@ -711,3 +711,53 @@ Get `title` from table books where `title` has a underscore sign in it.
 ```sql
 SELECT title FROM books WHERE title LIKE '%\_%' ;
 ```
+
+## Aggregate functions
+
+## COUNT
+
+* [The Ultimate MySQL bootcamp - COUNT](https://www.udemy.com/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert/learn/v4/t/lecture/7019828?start=0)
+
+How many books are in our database?
+```sql
+SELECT COUNT(*) as 'Amount of Books' FROM books;
+```
+
+Results in:
+```
++-----------------------------+
+| Amount of Author First Name |
++-----------------------------+
+|                          19 |
++-----------------------------+
+
+```
+
+How many distinct author first name are there in our `books` table
+
+```sql
+SELECT COUNT(DISTINCT author_fname) as 'Amount of Distinct Author First Name' FROM books;
+```
+
+Results in:
+```
++--------------------------------------+
+| Amount of Distinct Author First Name |
++--------------------------------------+
+|                                   12 |
++--------------------------------------+
+
+```
+
+How many distinct authors are there in our `books` table
+
+```sql
+SELECT COUNT(DISTINCT author_fname, author_lname) as 'Amount of Distinct Author First Name' FROM books;
+```
+
+
+How many titles contains the string 'the'
+
+```sql
+SELECT COUNT(*) FROM books WHERE title LIKE '%the%';
+```
