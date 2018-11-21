@@ -761,3 +761,48 @@ How many titles contains the string 'the'
 ```sql
 SELECT COUNT(*) FROM books WHERE title LIKE '%the%';
 ```
+
+## GROUP BY
+
+* [The Ultimate MySQL bootcamp - GROUP BY](https://www.udemy.com/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert/learn/v4/t/lecture/7019830?start=0)
+
+`GROUP BY` shows records based on groups in a column. 
+
+The output of this query is a bit confusing since it only shows the first book of each group.
+```sql
+SELECT title, author_lname FROM books GROUP BY author_lname;
+```
+
+By combining the `GROUP BY` with a `COUNT` it is easier to understand what is going on.
+
+```sql
+SELECT author_lname, COUNT(*) FROM books GROUP BY author_lname;
+```
+
+Results in:
+
+```
++----------------+----------+
+| author_lname   | COUNT(*) |
++----------------+----------+
+| Carver         |        2 |
+| Chabon         |        1 |
+| DeLillo        |        1 |
+| Eggers         |        3 |
+| Foster Wallace |        2 |
+| Gaiman         |        3 |
+| Harris         |        2 |
+| Lahiri         |        2 |
+| Saunders       |        1 |
+| Smith          |        1 |
+| Steinbeck      |        1 |
++----------------+----------+
+``` 
+This shows the count the number of books each author has written.
+
+It is possible to group by multiple fields, like so:
+```sql
+SELECT author_fname, author_lname, COUNT(*) FROM books GROUP BY author_lname, author_fname;
+```
+Which will avoid duplicated `author_lname`
+
