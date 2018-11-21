@@ -858,4 +858,23 @@ Calculate the total amount an author has produced in total in the `books` tables
 SELECT author_fname, author_lname, SUM(pages) from books GROUP BY author_fname, author_lname;
 ```
 
+## AVG
+
+* [The Ultimate MySQL bootcamp - AVG](https://www.udemy.com/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert/learn/v4/t/lecture/7019840?start=0)
+
+Calculate the average release year of all books in the `books` tables
+```sql
+SELECT AVG(released_year) from books;
+```
+
+Calculate the average `stock quantity` per `released_year` the `books` tables
+```sql
+SELECT released_year, AVG(stock_quantity) from books GROUP BY released_year;
+```
+
+Calculate the average `pages` per author in table `books`
+```sql
+SELECT author_fname, author_lname, AVG(PAGES) FROM books GROUP BY author_lname, author_fname;
+```
+
 
