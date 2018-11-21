@@ -845,4 +845,17 @@ FROM books
 GROUP BY author_lname, author_fname;
 ```
 
+## SUM
+* [The Ultimate MySQL bootcamp - SUM](https://www.udemy.com/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert/learn/v4/t/lecture/7019838?start=0)
+
+Calculate the total amount of pages from all books in the `books` tables
+```sql
+SELECT SUM(pages) from books;
+```
+
+Calculate the total amount an author has produced in total in the `books` tables
+```sql
+SELECT author_fname, author_lname, SUM(pages) from books GROUP BY author_fname, author_lname;
+```
+
 
