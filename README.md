@@ -806,3 +806,17 @@ SELECT author_fname, author_lname, COUNT(*) FROM books GROUP BY author_lname, au
 ```
 Which will avoid duplicated `author_lname`
 
+## MIN and MAX
+
+* [The Ultimate MySQL bootcamp - MIN and MAX](https://www.udemy.com/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert/learn/v4/t/lecture/7019832?start=0)
+
+Get the earliest released book from table `books`
+
+```sql
+SELECT MIN(released_year) FROM books;
+```
+
+Get the latest released book from table `books`
+```sql
+SELECT MAX(released_year) FROM books;
+```
