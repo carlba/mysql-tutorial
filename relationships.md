@@ -145,3 +145,75 @@ This will not only delete the customer Boy George but also his orders.
 ```sql
 DELETE from customers WHERE email='george@gmail.com';
 ```
+
+## Many to Many
+
+https://www.udemy.com/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert/learn/v4/t/lecture/7048208?start=0
+
+![Series Schema](images/series_schema.png)
+[The Ultimate MySQL bootcamp - Many To Many](https://www.udemy.com/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert/learn/v4/t/lecture/7048208?start=0)
+
+Get the review for all series
+```sql
+SELECT title, rating 
+FROM series 
+JOIN reviews ON series.id = reviews.series_id;
+```
+
+
+Get the average rating for all series group by series id
+```sql
+SELECT title, AVG(rating) as average_rating 
+FROM series 
+JOIN reviews ON series.id = reviews.series_id
+GROUP BY series.id
+ORDER BY average_rating;
+```
+
+Get the rating and reviewers firstname and lastname for every review 
+```sql
+SELECT first_name, last_name, rating
+from reviewers
+JOIN reviews on reviewers.id = reviews.reviewer_id
+```
+
+Get all series that are not reviewed (using a LEFT JOIN)
+```sql
+SELECT title as unreviewed_series FROM series
+LEFT JOIN reviews 
+  ON series.id = reviews.series_id
+WHERE reviews.id IS NULL;
+
+```
+
+Get average rating per genre rounded to two digits
+```sql
+SELECT genre, ROUND(AVG(rating),2) as avg_rating FROM series
+JOIN reviews ON series.id = reviews.series_id 
+GROUP BY genre;
+```
+
+Get statistics for our reviewers
+```sql
+SELECT 
+       first_name, 
+       last_name, 
+       IFNULL(COUNT(rating), 0) as COUNT, 
+       IFNULL(MIN(rating), 0) as MIN, 
+       IFNULL(MAX(rating), 0) as MAX, 
+       ROUND(IFNULL(AVG(rating), 0),2) as AVG,   
+       IF (COUNT(rating) = 0, 'INACTIVE', 'ACTIVE ') as status
+FROM reviewers
+LEFT JOIN reviews ON reviewers.id = reviews.reviewer_id
+GROUP BY reviewers.id;
+```
+
+Get all reviews with reviewers and series name (Many To Many)
+```sql
+SELECT title, rating, CONCAT(first_name, last_name) as name 
+FROM reviewers
+JOIN reviews ON reviewers.id = reviews.reviewer_id
+JOIN series ON series.id = reviews.series_id
+ORDER BY title;
+```
+

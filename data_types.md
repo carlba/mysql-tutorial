@@ -28,7 +28,7 @@ unless the PAD_CHAR_TO_FULL_LENGTH SQL mode is enabled.
 ### DECIMAL
 
 ```
-DECIMAL(<numbers before decimal point>,<numbers after decimal point>)
+DECIMAL(<total numbers>, <numbers after decimal point>)
 ```
 
 ```sql
