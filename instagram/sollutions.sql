@@ -55,6 +55,9 @@ FROM users
 GROUP BY likes.user_id
 HAVING number_of_likes = (SELECT COUNT(*) FROM photos);
 
+-- Having operates on the aggregated values from a GROUP BY whilst WHERE is a condition applied
+-- on each row that is the base for the aggregation.
+
 
 
 
