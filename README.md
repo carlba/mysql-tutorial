@@ -449,6 +449,7 @@ Results in:
 ## SUBSTRING
 * [The Ultimate MySQL bootcamp - Introducing SUBSTRING](https://www.udemy.com/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert/learn/v4/t/lecture/7019798?start=0)
 * [MySQL Reference Manual - SUBSTRING](https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_substring)
+* [Substring in SQL Server](https://www.scaler.com/topics/substring-in-sql-server/)
 
 ```sql
 SELECT SUBSTRING('Hello World', 1, 4);
